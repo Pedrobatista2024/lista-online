@@ -45,6 +45,42 @@ const mostrarMensagem = (texto, tipo = 'error') => {
   box.textContent = texto;
 };
 
+const atualizarPix = () => {
+  const pixCard = el('pixCard');
+  const pixChaveLinha = el('pixChaveLinha');
+  const pixTitularLinha = el('pixTitularLinha');
+  const btnCopiarPix = el('btnCopiarPix');
+  const inscricao = getInscricaoLocal();
+  const pixChave = estado?.lista?.pix_chave?.trim() || '';
+  const pixTitular = estado?.lista?.pix_titular?.trim() || '';
+
+  if (!inscricao || (!pixChave && !pixTitular)) {
+    pixCard.classList.add('hidden');
+    pixChaveLinha.classList.add('hidden');
+    pixTitularLinha.classList.add('hidden');
+    btnCopiarPix.classList.add('hidden');
+    return;
+  }
+
+  pixCard.classList.remove('hidden');
+
+  if (pixTitular) {
+    el('pixTitular').textContent = pixTitular;
+    pixTitularLinha.classList.remove('hidden');
+  } else {
+    pixTitularLinha.classList.add('hidden');
+  }
+
+  if (pixChave) {
+    el('pixChave').textContent = pixChave;
+    pixChaveLinha.classList.remove('hidden');
+    btnCopiarPix.classList.remove('hidden');
+  } else {
+    pixChaveLinha.classList.add('hidden');
+    btnCopiarPix.classList.add('hidden');
+  }
+};
+
 const atualizarBloqueioInscricao = () => {
   const inscricao = getInscricaoLocal();
   const searchCard = el('searchCard');
@@ -56,6 +92,7 @@ const atualizarBloqueioInscricao = () => {
     realizada.classList.add('hidden');
     if (estado?.lista?.inscricoes_abertas) searchCard.classList.remove('hidden');
   }
+  atualizarPix();
 };
 
 const textoPosicao = (item) => item.posicao === 'Goleiro' ? 'Goleiro' : (item.funcao_linha || 'Linha');
@@ -236,6 +273,16 @@ const iniciarRealtime = () => {
 
 el('busca').addEventListener('input', agendarBusca);
 el('btnAtualizar').addEventListener('click', () => carregarLista());
+el('btnCopiarPix').addEventListener('click', async () => {
+  const pixChave = estado?.lista?.pix_chave?.trim() || '';
+  if (!pixChave) return;
+  try {
+    await navigator.clipboard.writeText(pixChave);
+    mostrarMensagem('Chave Pix copiada.', 'success');
+  } catch (error) {
+    mostrarMensagem('Não foi possível copiar automaticamente. Selecione e copie a chave Pix.', 'error');
+  }
+});
 el('btnLimparBusca').addEventListener('click', () => {
   el('busca').value = '';
   renderResultados([]);

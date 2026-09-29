@@ -40,6 +40,20 @@
 
     <section id="inscricaoRealizada" class="message success hidden">Inscrição realizada</section>
 
+    <section id="pixCard" class="pix-card hidden">
+      <h2>Pagamento</h2>
+      <div id="pixTitularLinha" class="pix-line hidden">
+        <span>Titular</span>
+        <strong id="pixTitular"></strong>
+      </div>
+      <div id="pixChaveLinha" class="pix-line hidden">
+        <span>Chave Pix</span>
+        <strong id="pixChave"></strong>
+      </div>
+      <button id="btnCopiarPix" class="copy-button hidden" type="button">Copiar chave Pix</button>
+      <p class="pix-note">Confira os dados antes de efetuar o pagamento. Após o pagamento, envie o comprovante para o administrador.</p>
+    </section>
+
     <section class="list-card">
       <h2>Jogadores inscritos</h2>
       <div class="group"><h3>Goleiros</h3><div id="listaGoleiros" class="items"></div></div>
@@ -50,6 +64,6 @@
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="app.js?v=20260929-1"></script>
+  <script src="app.js?v=20260929-2"></script>
 </body>
 </html>

@@ -30,7 +30,7 @@ button:disabled { cursor: not-allowed; opacity: 0.58; }
   padding: clamp(10px, 3vw, 24px);
 }
 
-.hero-card, .summary-card, .search-card, .list-card, .message {
+.hero-card, .summary-card, .search-card, .list-card, .pix-card, .message {
   background: var(--paper);
   border: 1.5px solid var(--gold-2);
   border-radius: 12px;
@@ -63,6 +63,34 @@ h3 { margin: 16px 0 8px; color: var(--green); font-size: 14px; text-transform: u
 .message { font-weight: 800; line-height: 1.35; overflow-wrap: anywhere; }
 .message.error { border-color: #bd3b2f; color: #8a1f17; background: #fff1ef; }
 .message.success { border-color: var(--green-2); color: var(--green); background: #e7f4d3; }
+.pix-card {
+  background: var(--paper);
+}
+.pix-card h2 { margin-bottom: 10px; }
+.pix-line {
+  display: grid;
+  gap: 3px;
+  background: var(--paper-2);
+  border: 1px solid #efe6a7;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+.pix-line span { color: #4d6b55; font-size: 12px; font-weight: 900; text-transform: uppercase; }
+.pix-line strong { color: var(--green); font-size: 14px; overflow-wrap: anywhere; }
+.copy-button {
+  width: 100%;
+  min-height: 40px;
+  border: 0;
+  border-radius: 9px;
+  background: var(--green);
+  color: #fffbe3;
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 4px 0 10px;
+}
+.pix-note { margin: 0; color: #4d6b55; font-size: 13px; font-weight: 800; line-height: 1.35; }
 .summary-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .icon-button {
   flex: 0 0 auto;
@@ -181,7 +209,7 @@ input:focus { border-color: var(--green-2); box-shadow: 0 0 0 3px rgba(11, 122, 
 }
 @media (max-width: 480px) {
   .app-shell { padding: 10px; }
-  .hero-card, .summary-card, .search-card, .list-card, .message { border-radius: 10px; }
+  .hero-card, .summary-card, .search-card, .list-card, .pix-card, .message { border-radius: 10px; }
   .summary-grid { gap: 7px; }
   .summary-item { padding: 10px 8px; }
 }
@@ -194,7 +222,7 @@ input:focus { border-color: var(--green-2); box-shadow: 0 0 0 3px rgba(11, 122, 
 }
 @media (max-width: 320px) {
   .app-shell { padding: 8px; }
-  .hero-card, .summary-card, .search-card, .list-card, .message { padding: 10px; }
+  .hero-card, .summary-card, .search-card, .list-card, .pix-card, .message { padding: 10px; }
   .summary-grid { grid-template-columns: 1fr 1fr; }
   .payment-badge { min-width: 70px; font-size: 10px; }
 }
