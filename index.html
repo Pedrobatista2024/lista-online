@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lista Online - Futeboleiros</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero-card">
+      <p class="eyebrow">Futeboleiros</p>
+      <h1 id="listaNome">Lista online</h1>
+      <span id="listaStatus" class="status-pill">Carregando...</span>
+    </section>
+
+    <section id="mensagem" class="message hidden"></section>
+
+    <section class="summary-card">
+      <div class="summary-head">
+        <h2>Vagas</h2>
+        <button id="btnAtualizar" class="icon-button" type="button" aria-label="Atualizar lista">↻</button>
+      </div>
+      <div class="summary-grid">
+        <div class="summary-item"><strong id="resumoLinha">0/0</strong><span>Linha</span></div>
+        <div class="summary-item"><strong id="resumoGoleiros">0/0</strong><span>Goleiros</span></div>
+        <div class="summary-item"><strong id="resumoReservas">0/0</strong><span>Reservas</span></div>
+        <div class="summary-item"><strong id="resumoEspera">0/0</strong><span>Espera</span></div>
+      </div>
+    </section>
+
+    <section id="searchCard" class="search-card">
+      <label for="busca">Pesquise seu nome</label>
+      <div class="search-input-wrap">
+        <input id="busca" type="search" autocomplete="off" placeholder="Digite pelo menos 2 letras" />
+        <button id="btnLimparBusca" class="clear-button hidden" type="button" aria-label="Limpar busca">×</button>
+      </div>
+      <div id="resultadosBusca" class="search-results"></div>
+    </section>
+
+    <section id="inscricaoRealizada" class="message success hidden">Inscrição realizada</section>
+
+    <section class="list-card">
+      <h2>Jogadores inscritos</h2>
+      <div class="group"><h3>Goleiros</h3><div id="listaGoleiros" class="items"></div></div>
+      <div class="group"><h3>Titulares</h3><div id="listaTitulares" class="items"></div></div>
+      <div class="group"><h3>Reservas</h3><div id="listaReservas" class="items"></div></div>
+      <div class="group"><h3>Lista de espera</h3><div id="listaEspera" class="items"></div></div>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js?v=20260929-1"></script>
+</body>
+</html>
