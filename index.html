@@ -50,7 +50,15 @@
         <span>Chave Pix</span>
         <strong id="pixChave"></strong>
       </div>
-      <button id="btnCopiarPix" class="copy-button hidden" type="button">Copiar chave Pix</button>
+      <div id="pixValorLinha" class="pix-line hidden">
+        <span>Valor</span>
+        <strong id="pixValor"></strong>
+      </div>
+      <div id="pixQrArea" class="pix-qr-area hidden">
+        <div id="pixQrCode" class="pix-qr-code" aria-label="QR Code Pix"></div>
+      </div>
+      <button id="btnCopiarPixCopiaCola" class="copy-button hidden" type="button">Copiar Pix copia e cola</button>
+      <button id="btnCopiarPix" class="copy-button secondary hidden" type="button">Copiar chave Pix</button>
       <p class="pix-note">Confira os dados antes de efetuar o pagamento. Após o pagamento, envie o comprovante para o administrador.</p>
     </section>
 
@@ -64,6 +72,7 @@
   </main>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="app.js?v=20260929-2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+  <script src="app.js?v=20261001-1"></script>
 </body>
 </html>

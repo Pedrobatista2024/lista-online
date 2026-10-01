@@ -78,6 +78,27 @@ h3 { margin: 16px 0 8px; color: var(--green); font-size: 14px; text-transform: u
 }
 .pix-line span { color: #4d6b55; font-size: 12px; font-weight: 900; text-transform: uppercase; }
 .pix-line strong { color: var(--green); font-size: 14px; overflow-wrap: anywhere; }
+.pix-qr-area {
+  display: grid;
+  place-items: center;
+  background: var(--paper-2);
+  border: 1px solid #efe6a7;
+  border-radius: 10px;
+  padding: 12px;
+  margin: 8px 0;
+}
+.pix-qr-code {
+  width: 192px;
+  height: 192px;
+  padding: 8px;
+  background: #fff;
+  border-radius: 8px;
+}
+.pix-qr-code img, .pix-qr-code canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
 .copy-button {
   width: 100%;
   min-height: 40px;
@@ -89,6 +110,11 @@ h3 { margin: 16px 0 8px; color: var(--green); font-size: 14px; text-transform: u
   font-weight: 900;
   text-transform: uppercase;
   margin: 4px 0 10px;
+}
+.copy-button.secondary {
+  background: var(--paper-2);
+  color: var(--green);
+  border: 1px solid var(--green-2);
 }
 .pix-note { margin: 0; color: #4d6b55; font-size: 13px; font-weight: 800; line-height: 1.35; }
 .summary-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
